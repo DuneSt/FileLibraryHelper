@@ -1,11 +1,11 @@
 *FileLibraryHelper
 importFiles
 	<script>
-	(FileSystem workingDirectory / self resourcesFolderName) allDirectories
+	(FileSystem workingDirectory / self resourcesFolderName) directories
 		do: [ :directory | 
-			directory allFiles
+			directory files
 				do: [ :file | 
-					| fileName |
-					fileName := self default asSelector: file basename.
-					self compileText: file contents selector: fileName.
-					self methods detect: [ :m | m selector = fileName ] ifFound: [ :m | m protocol: directory basename ] ] ]
+					self addFileAt: self resourcesFolderName , '/' , directory basename , '/' , file basename.
+					self methods detect: [ :m | m selector = (self default asSelector: file basename) ] ifFound: [ :m | m protocol: directory basename ] ]
+				displayingProgress: [ :file | 'Importing: ' , file basename ] ]
+		displayingProgress: [ :dir | 'Importing files from: ' , dir basename ]

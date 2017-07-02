@@ -7,7 +7,8 @@ deployFiles
 		on: PrimitiveFailed
 		do: [ "On windows this can happen :(" ].
 	resourceFolder ensureCreateDirectory.
-	(self methods groupedBy: #protocol)
-		keysAndValuesDo: [ :protocol :methods | 
-			protocol ~= #accessing
-				ifTrue: [ self export: methods inFolder: resourceFolder / protocol ] ]
+	(self methods groupedBy: #protocol) associations
+		do: [ :association | 
+			association key ~= #accessing
+				ifTrue: [ self export: association value inFolder: resourceFolder / association key ] ]
+		displayingProgress: [ :each | 'Deploying protocol : ' , each key ]
