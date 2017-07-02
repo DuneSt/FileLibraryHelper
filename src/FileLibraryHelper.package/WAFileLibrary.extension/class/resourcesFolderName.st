@@ -1,3 +1,3 @@
 *FileLibraryHelper
 resourcesFolderName
-	^ self subclassResponsibility
+	^ self printString
