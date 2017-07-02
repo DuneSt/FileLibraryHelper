@@ -1,0 +1,3 @@
+*FileLibraryHelper
+resourcesFolderName
+	^ self subclassResponsibility
