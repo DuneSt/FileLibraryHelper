@@ -12,3 +12,4 @@ deployFiles
 			association key ~= #accessing
 				ifTrue: [ self export: association value inFolder: resourceFolder / association key ] ]
 		displayingProgress: [ :each | 'Deploying protocol : ' , each key ]
+		every: 200
