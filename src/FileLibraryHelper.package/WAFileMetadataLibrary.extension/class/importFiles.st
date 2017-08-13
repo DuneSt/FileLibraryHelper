@@ -1,0 +1,3 @@
+*FileLibraryHelper
+importFiles
+	self recursivelyAddAllFilesIn: self resourcesFolderName
