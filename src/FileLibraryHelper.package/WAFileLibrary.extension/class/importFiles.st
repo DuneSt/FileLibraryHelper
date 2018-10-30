@@ -1,7 +1,7 @@
 *FileLibraryHelper
 importFiles
 	<script>
-	(FileSystem workingDirectory / self resourcesFolderName) directories
+	((FileSystem workingDirectory / self resourcesFolderName) directories reject: [ :each | each basename beginsWith: '.' ])
 		do: [ :directory | 
 			directory files
 				do: [ :file | 
