@@ -14,7 +14,13 @@ BaselineOfFileLibraryHelper >> baseline: spec [
 	spec
 		for: #common
 		do: [ self seaside3: spec.
-			spec package: 'FileLibraryHelper' with: [ spec requires: #('Seaside3') ] ]
+			spec package: 'FileLibraryHelper' with: [ spec requires: #('Seaside3') ] ].
+
+	spec
+		for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x' #'pharo7.x')
+		do: [ spec
+				package: 'FileLibraryHelper' with: [ spec requires: #('FileLibraryHelper-Pharo8') ];
+				package: 'FileLibraryHelper-Pharo8' ]
 ]
 
 { #category : #dependencies }

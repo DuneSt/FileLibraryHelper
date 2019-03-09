@@ -2,5 +2,5 @@ Extension { #name : #WAFileMetadataLibrary }
 
 { #category : #'*FileLibraryHelper' }
 WAFileMetadataLibrary class >> importFiles [
-	self recursivelyAddAllFilesIn: self resourcesFolderName
+	EpMonitor disableDuring: [ self recursivelyAddAllFilesIn: self resourcesFolderName ]
 ]
