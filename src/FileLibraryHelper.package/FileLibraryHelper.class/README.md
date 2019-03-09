@@ -1,1 +1,0 @@
-I am a simple class to add some mime types to the FileLibraries.

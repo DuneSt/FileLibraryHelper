@@ -1,3 +1,0 @@
-*FileLibraryHelper
-resourcesFolderName
-	^ self printString
