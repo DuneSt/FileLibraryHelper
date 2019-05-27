@@ -5,7 +5,7 @@ WAFileLibrary class >> deployFiles [
 	<script>
 	| resourceFolder |
 	resourceFolder := FileSystem workingDirectory / self resourcesFolderName.
-	[ resourceFolder ensureDelete ]
+	[ resourceFolder ensureDeleteAll ]
 		on: PrimitiveFailed
 		do: [ "On windows this can happen :(" ].
 	resourceFolder ensureCreateDirectory.
