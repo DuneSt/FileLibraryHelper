@@ -46,6 +46,7 @@ Current features:
 - `#deployFiles` : Deploy all the methods of the FileLibrary into files except the ones in the `#accessing` protocol. Each file will be in a folder corresponding to his protocol. Thus you can categorize the files in protocols as 'css', 'javascript', 'sass'...
 - `#importFiles` : Reimport  all the files.
 - `#openImportButton` : When you need to import multiple times, for example when you use the watch command of SASS, it is easier to just clic on a button into Pharo. This method is here for you!
+- `#filesDirectory` : Override this class method if you use a shared directory (like a git repo) between images.
 
 ## Future Ideas
 
