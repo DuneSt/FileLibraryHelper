@@ -33,8 +33,13 @@ WAFileLibrary class >> export: methods inFolder: subFolder [
 { #category : #'*FileLibraryHelper' }
 WAFileLibrary class >> importFiles [
 	<script>
+	self importFilesFrom: FileSystem workingDirectory
+]
+
+{ #category : #'*FileLibraryHelper' }
+WAFileLibrary class >> importFilesFrom: aDirectory [
 	EpMonitor
-		disableDuring: [ ((FileSystem workingDirectory / self resourcesFolderName) directories reject: [ :each | each basename beginsWith: '.' ])
+		disableDuring: [ ((aDirectory / self resourcesFolderName) directories reject: [ :each | each basename beginsWith: '.' ])
 				do: [ :directory | 
 					directory files
 						do: [ :file | 
