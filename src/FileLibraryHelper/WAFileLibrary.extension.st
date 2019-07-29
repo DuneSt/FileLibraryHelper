@@ -31,9 +31,14 @@ WAFileLibrary class >> export: methods inFolder: subFolder [
 ]
 
 { #category : #'*FileLibraryHelper' }
+WAFileLibrary class >> filesDirectory [
+	^ FileSystem workingDirectory
+]
+
+{ #category : #'*FileLibraryHelper' }
 WAFileLibrary class >> importFiles [
 	<script>
-	self importFilesFrom: FileSystem workingDirectory
+	self importFilesFrom: self filesDirectory
 ]
 
 { #category : #'*FileLibraryHelper' }
