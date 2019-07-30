@@ -49,7 +49,6 @@ WAFileLibrary class >> importFilesFrom: aDirectory [
 				do: [ :directory | 
 					directory files
 						do: [ :file | 
-							self halt.
 							self addFileAt: file fullName.
 							self methods
 								detect: [ :m | m selector = (self default asSelector: file basename) ]
