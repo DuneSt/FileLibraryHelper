@@ -32,7 +32,7 @@ WAFileLibrary class >> export: methods inFolder: subFolder [
 
 { #category : #'*FileLibraryHelper' }
 WAFileLibrary class >> filesDirectory [
-	^ FileSystem workingDirectory
+	^ FileSystem workingDirectory / self resourcesFolderName
 ]
 
 { #category : #'*FileLibraryHelper' }
