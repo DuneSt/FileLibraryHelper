@@ -5,19 +5,15 @@ Class {
 }
 
 { #category : #tests }
-FileLibraryHelperTest >> setUp [
-	FileLibraryLibMock fileSystem: FileSystem memory 
-]
-
-{ #category : #tests }
 FileLibraryHelperTest >> tearDown [ 
-	FileLibraryLibMock fileSystem: nil
+	 FileLibraryLibMock methods do: #removeFromSystem
 ]
 
 { #category : #tests }
 FileLibraryHelperTest >> testImportingJsFile [
 	FileLibraryLibMock importFiles.
 	self
-		assert: (FileLibraryLibMock new perform: #topicJs)
-		equals: 'console.log("The Good Place is a serie about hell")'
+		assert: (FileLibraryLibMock new perform: #TheGoodPlaceJs)
+		equals: 'console.log("The Good Place is a serie about hell")
+'
 ]
