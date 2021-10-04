@@ -4,7 +4,7 @@ A little project to help to manage Seaside's FileLibrary when we need to edit fi
 
 ## Version management 
 
-This project use semantic versionning to define the releases. This mean that each stable release of the project will get associate a version number of the form `vX.Y.Z`. 
+This project uses semantic versioning to define the releases. This mean that each stable release of the project will get associate a version number of the form `vX.Y.Z`. 
 
 - **X** define the major version number
 - **Y** define the minor version number 
@@ -20,7 +20,7 @@ To install the project on your Pharo image you can just execute the following sc
 
 ```Smalltalk
     Metacello new
-    	githubUser: 'jecisc' project: 'FileLibraryHelper' commitish: 'v1.x.x' path: 'src';
+    	githubUser: 'DuneSt' project: 'FileLibraryHelper' commitish: 'v1.x.x' path: 'src';
     	baseline: 'FileLibraryHelper';
     	onWarningLog;
     	load
@@ -31,7 +31,7 @@ To add the project to your baseline just add this:
 ```Smalltalk
     spec
     	baseline: 'FileLibraryHelper'
-    	with: [ spec repository: 'github://jecisc/FileLibraryHelper:v1.x.x/src' ]
+    	with: [ spec repository: 'github://DuneSt/FileLibraryHelper:v1.x.x/src' ]
 ```
 
 ## Getting started
@@ -57,5 +57,5 @@ In the future I would like to get a group with OSSubProcess in order to execute 
 | MDL version 	| Compatible Pharo versions 	|
 |-------------	|---------------------------	|
 | 0.0.1       	| Pharo 50, 60, 61, 70				|
-| 1.x.x       	| Pharo 61, 70        				|
+| 1.x.x       	| Pharo 61, 70, 80, 90        		|
 
