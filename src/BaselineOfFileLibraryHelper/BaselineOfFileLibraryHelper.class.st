@@ -5,7 +5,7 @@ To know more: https://github.com/jecisc/FileLibraryHelper
 Class {
 	#name : #BaselineOfFileLibraryHelper,
 	#superclass : #BaselineOf,
-	#category : 'BaselineOfFileLibraryHelper'
+	#category : #BaselineOfFileLibraryHelper
 }
 
 { #category : #baseline }
@@ -14,12 +14,22 @@ BaselineOfFileLibraryHelper >> baseline: spec [
 	spec
 		for: #common
 		do: [ self seaside3: spec.
-			spec package: 'FileLibraryHelper' with: [ spec requires: #('Seaside3') ] ].
-
+			spec
+				package: 'FileLibraryHelper'
+				with: [ spec requires: #('Seaside3') ] ].
+	spec
+		for: #dev
+		do: [ self seaside3: spec.
+			spec
+				package: 'FileLibraryHelper'
+					with: [ spec requires: #('Seaside3') ] spec;
+				package: 'FileLibraryHelper-Tests'
+					with: [ spec requires: #('GitBridge') ] ].
 	spec
 		for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x' #'pharo7.x')
 		do: [ spec
-				package: 'FileLibraryHelper' with: [ spec requires: #('FileLibraryHelper-Pharo8') ];
+				package: 'FileLibraryHelper'
+					with: [ spec requires: #('FileLibraryHelper-Pharo8') ];
 				package: 'FileLibraryHelper-Pharo8' ]
 ]
 
