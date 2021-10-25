@@ -4,7 +4,7 @@ Extension { #name : #WAFileLibrary }
 WAFileLibrary class >> deployFiles [
 	<script>
 	| resourceFolder |
-	resourceFolder := FileSystem workingDirectory / self resourcesFolderName.
+	resourceFolder := self filesDirectory.
 	[ resourceFolder ensureDeleteAll ]
 		on: PrimitiveFailed
 		do: [ "On windows this can happen :(" ].
