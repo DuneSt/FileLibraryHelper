@@ -57,5 +57,5 @@ In the future I would like to get a group with OSSubProcess in order to execute 
 | MDL version 	| Compatible Pharo versions 	|
 |-------------	|---------------------------	|
 | 0.0.1       	| Pharo 50, 60, 61, 70				|
-| 1.x.x       	| Pharo 61, 70, 80, 90        		|
+| 1.x.x       	| Pharo 61, 70, 80, 90, 10        		|
 
